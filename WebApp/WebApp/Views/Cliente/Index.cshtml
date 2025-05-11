@@ -1,0 +1,17 @@
+﻿@using Dominio;
+
+
+<h1>Lista de clientes</h1>
+
+<table class="table table-success table-striped">
+    @foreach (Cliente c in ViewBag.Clientes)
+    {
+        <tr>
+            <td>
+                <p>Nombre del cliente: @c.Nombre</p>
+            </td>
+        </tr>
+    }
+</table>
+
+

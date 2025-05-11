@@ -1,0 +1,19 @@
+C:\Users\Joaquin\source\repos\SitioStreaming\Dominio\bin\Debug\netcoreapp3.1\Dominio.deps.json
+C:\Users\Joaquin\source\repos\SitioStreaming\Dominio\bin\Debug\netcoreapp3.1\Dominio.dll
+C:\Users\Joaquin\source\repos\SitioStreaming\Dominio\bin\Debug\netcoreapp3.1\Dominio.pdb
+C:\Users\Joaquin\source\repos\SitioStreaming\Dominio\obj\Debug\netcoreapp3.1\Dominio.csproj.AssemblyReference.cache
+C:\Users\Joaquin\source\repos\SitioStreaming\Dominio\obj\Debug\netcoreapp3.1\Dominio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Joaquin\source\repos\SitioStreaming\Dominio\obj\Debug\netcoreapp3.1\Dominio.AssemblyInfoInputs.cache
+C:\Users\Joaquin\source\repos\SitioStreaming\Dominio\obj\Debug\netcoreapp3.1\Dominio.AssemblyInfo.cs
+C:\Users\Joaquin\source\repos\SitioStreaming\Dominio\obj\Debug\netcoreapp3.1\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\Joaquin\source\repos\SitioStreaming\Dominio\obj\Debug\netcoreapp3.1\Dominio.dll
+C:\Users\Joaquin\source\repos\SitioStreaming\Dominio\obj\Debug\netcoreapp3.1\Dominio.pdb
+C:\Users\alumnoFI\Downloads\Proyecto base_SitioStreaming\SitioStreaming\Dominio\bin\Debug\netcoreapp3.1\Dominio.deps.json
+C:\Users\alumnoFI\Downloads\Proyecto base_SitioStreaming\SitioStreaming\Dominio\bin\Debug\netcoreapp3.1\Dominio.dll
+C:\Users\alumnoFI\Downloads\Proyecto base_SitioStreaming\SitioStreaming\Dominio\bin\Debug\netcoreapp3.1\Dominio.pdb
+C:\Users\alumnoFI\Downloads\Proyecto base_SitioStreaming\SitioStreaming\Dominio\obj\Debug\netcoreapp3.1\Dominio.csprojAssemblyReference.cache
+C:\Users\alumnoFI\Downloads\Proyecto base_SitioStreaming\SitioStreaming\Dominio\obj\Debug\netcoreapp3.1\Dominio.AssemblyInfoInputs.cache
+C:\Users\alumnoFI\Downloads\Proyecto base_SitioStreaming\SitioStreaming\Dominio\obj\Debug\netcoreapp3.1\Dominio.AssemblyInfo.cs
+C:\Users\alumnoFI\Downloads\Proyecto base_SitioStreaming\SitioStreaming\Dominio\obj\Debug\netcoreapp3.1\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\alumnoFI\Downloads\Proyecto base_SitioStreaming\SitioStreaming\Dominio\obj\Debug\netcoreapp3.1\Dominio.dll
+C:\Users\alumnoFI\Downloads\Proyecto base_SitioStreaming\SitioStreaming\Dominio\obj\Debug\netcoreapp3.1\Dominio.pdb

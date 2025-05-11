@@ -1,0 +1,15 @@
+C:\Users\alumnoFi\source\repos\Interfaces\Interfaces\obj\Debug\net7.0\Interfaces.csproj.AssemblyReference.cache
+C:\Users\alumnoFi\source\repos\Interfaces\Interfaces\obj\Debug\net7.0\Interfaces.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alumnoFi\source\repos\Interfaces\Interfaces\obj\Debug\net7.0\Interfaces.AssemblyInfoInputs.cache
+C:\Users\alumnoFi\source\repos\Interfaces\Interfaces\obj\Debug\net7.0\Interfaces.AssemblyInfo.cs
+C:\Users\alumnoFi\source\repos\Interfaces\Interfaces\obj\Debug\net7.0\Interfaces.csproj.CoreCompileInputs.cache
+C:\Users\alumnoFi\source\repos\Interfaces\Interfaces\bin\Debug\net7.0\Interfaces.exe
+C:\Users\alumnoFi\source\repos\Interfaces\Interfaces\bin\Debug\net7.0\Interfaces.deps.json
+C:\Users\alumnoFi\source\repos\Interfaces\Interfaces\bin\Debug\net7.0\Interfaces.runtimeconfig.json
+C:\Users\alumnoFi\source\repos\Interfaces\Interfaces\bin\Debug\net7.0\Interfaces.dll
+C:\Users\alumnoFi\source\repos\Interfaces\Interfaces\bin\Debug\net7.0\Interfaces.pdb
+C:\Users\alumnoFi\source\repos\Interfaces\Interfaces\obj\Debug\net7.0\Interfaces.dll
+C:\Users\alumnoFi\source\repos\Interfaces\Interfaces\obj\Debug\net7.0\refint\Interfaces.dll
+C:\Users\alumnoFi\source\repos\Interfaces\Interfaces\obj\Debug\net7.0\Interfaces.pdb
+C:\Users\alumnoFi\source\repos\Interfaces\Interfaces\obj\Debug\net7.0\Interfaces.genruntimeconfig.cache
+C:\Users\alumnoFi\source\repos\Interfaces\Interfaces\obj\Debug\net7.0\ref\Interfaces.dll

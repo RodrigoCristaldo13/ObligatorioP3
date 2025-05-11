@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Usuario\\source\\repos\\EjercicioGif\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{48080767-6287-4543-A63A-9B15FA526AB1}|EjercicioGif\\EjercicioGif.csproj|c:\\users\\usuario\\source\\repos\\ejerciciogif\\ejerciciogif\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48080767-6287-4543-A63A-9B15FA526AB1}|EjercicioGif\\EjercicioGif.csproj|solutionrelative:ejerciciogif\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48080767-6287-4543-A63A-9B15FA526AB1}|EjercicioGif\\EjercicioGif.csproj|c:\\users\\usuario\\source\\repos\\ejerciciogif\\ejerciciogif\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{48080767-6287-4543-A63A-9B15FA526AB1}|EjercicioGif\\EjercicioGif.csproj|solutionrelative:ejerciciogif\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48080767-6287-4543-A63A-9B15FA526AB1}|EjercicioGif\\EjercicioGif.csproj|c:\\users\\usuario\\source\\repos\\ejerciciogif\\ejerciciogif\\models\\gifimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48080767-6287-4543-A63A-9B15FA526AB1}|EjercicioGif\\EjercicioGif.csproj|solutionrelative:ejerciciogif\\models\\gifimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\EjercicioGif\\EjercicioGif\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "EjercicioGif\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\EjercicioGif\\EjercicioGif\\Controllers\\HomeController.cs*",
+              "RelativeToolTip": "EjercicioGif\\Controllers\\HomeController.cs*",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAAABIAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T23:41:42.524Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\EjercicioGif\\EjercicioGif\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "EjercicioGif\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\EjercicioGif\\EjercicioGif\\Views\\Home\\Index.cshtml*",
+              "RelativeToolTip": "EjercicioGif\\Views\\Home\\Index.cshtml*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-04T23:38:21.822Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GifImage.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\EjercicioGif\\EjercicioGif\\Models\\GifImage.cs",
+              "RelativeDocumentMoniker": "EjercicioGif\\Models\\GifImage.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\EjercicioGif\\EjercicioGif\\Models\\GifImage.cs*",
+              "RelativeToolTip": "EjercicioGif\\Models\\GifImage.cs*",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAABEAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T23:36:38.664Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
