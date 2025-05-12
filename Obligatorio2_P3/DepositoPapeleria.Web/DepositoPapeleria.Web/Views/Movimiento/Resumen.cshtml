@@ -1,0 +1,53 @@
+﻿@model IEnumerable<DepositoPapeleria.Web.Models.ResumenModel>
+@{
+    ViewData["Title"] = "Resumen";
+}
+
+<div class="container p-5">
+    @if (ViewBag.mensaje != null)
+    {
+        <div class="alert alert-danger">
+            <p>@ViewBag.mensaje</p>
+        </div>
+    }
+    <h2 class="display-6">Resumen de Movimientos de Stock</h2>
+    <h6>Se muestra la cantidad de movimientos de stock de cada tipo y el total anual.</h6>
+    @if (Model != null && Model.Count() > 0)
+    {
+        <hr />
+        <table class="table table-light table-hover">
+            <thead>
+                <tr>
+                    <th>
+                        Año
+                    </th>
+                    <th>
+                        Total Anual
+                    </th>
+                    <th>
+                        Detalles
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Anio)
+                        </td>
+                        <td>@Html.DisplayFor(modelItem => item.TotalAnio) unidades.</td>
+                        <td>
+                            <a asp-action="Details" asp-route-anio="@item.Anio" class="btn btn-sm btn-primary">Detalles</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <div class="alert alert-light text-success">No hay datos de resumen para mostrar.</div>
+    }
+</div>
+
