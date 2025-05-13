@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Inicio";
+}
+
+<div class="text-center">
+    @if (@ViewBag.MensajeLogin != null)
+    {
+        <h1 class="display-4">Bienvenido al deposito de la Papeleria</h1>
+        <h6 class="text-success">@ViewBag.MensajeLogin</h6>
+        <br />
+    }
+    else
+    {
+        <h1 class="display-4">Deposito de Papeleria</h1>
+        <br />
+        <h5 class="display-6">Usuario Encargado inicie sesión para acceder a las funcionalidades del sistema</h5>
+        <h6 class="text-success">@ViewBag.msgLogout</h6>
+        <br />
+        <p>@ViewBag.Mensaje</p>
+    }
+</div>

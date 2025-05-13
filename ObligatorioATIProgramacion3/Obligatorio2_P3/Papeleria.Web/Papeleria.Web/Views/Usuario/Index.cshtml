@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Papeleria.LogicaAplicacion.DataTransferObjects.DTOs.UsuarioDto>
+
+@{
+    ViewData["Title"] = "Usuarios";
+}
+
+<h1>Lista de Usuarios</h1>
+<br />
+<div>
+    <a asp-action="Create" class="btn btn-primary">
+        Nuevo
+        <img src="~/img/agregarUsuario.svg" class="btn-close-white px-2" title="Nuevo Usuario" alt="Nuevo Usuario">
+    </a>
+</div>
+@if (ViewBag.Mensaje != null)
+{
+    <br />
+    <div class="alert alert-success text-success fw-bold" role="alert">
+        @ViewBag.Mensaje
+    </div>
+}
+<div class="table-responsive">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Email</th>
+                <th class="text-center">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Apellido)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                    <td class="text-center">
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-primary">
+                            <img src="~/img/editar.svg" class="btn-close-white px-2" title="Editar" alt="Editar">
+                        </a>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-secondary">
+                            <img src="~/img/detalles.svg" class="btn-close-white px-2" title="Detalles" alt="Detalles">
+                        </a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">
+                            <img src="~/img/eliminar.svg" class="btn-close-white px-2" title="Eliminar" alt="Eliminar">
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

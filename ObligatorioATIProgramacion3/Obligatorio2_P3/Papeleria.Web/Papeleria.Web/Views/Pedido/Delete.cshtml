@@ -1,0 +1,101 @@
+﻿@using Papeleria.LogicaAplicacion.DataTransferObjects.DTOs
+@model Papeleria.LogicaAplicacion.DataTransferObjects.DTOs.PedidoDto
+
+@{
+    ViewData["Title"] = "Anular Pedido";
+}
+
+<div class="container">
+    @if (ViewBag.Error != null)
+    {
+        <div class="alert alert-danger">
+            <span>@ViewBag.Error</span>
+        </div>
+    }
+    else
+    {
+        <div class="card">
+            <div class="card-header bg-danger text-white">
+                <h3 class="">Anular Pedido</h3>
+                <h6 class="card-subtitle mb-2 text-white">¿Seguro que desea anular este Pedido? Esta acción no se puede deshacer</h6>
+            </div>
+            <div class="card-body">
+                <dl class="row">
+                    <dt class="col-sm-5">
+                        <strong>@Html.DisplayNameFor(model => model.FechaPedido)</strong>
+                    </dt>
+                    <dd class="col-sm-7 ">
+                        @Html.DisplayFor(model => model.FechaPedido)
+                    </dd>
+                    <dt class="col-sm-5">
+                        <strong>@Html.DisplayNameFor(model => model.FechaEntregaPrometida)</strong>
+                    </dt>
+                    <dd class="col-sm-7 ">
+                        @Html.DisplayFor(model => model.FechaEntregaPrometida)
+                    </dd>
+                    <dt class="col-sm-5">
+                        <strong>@Html.DisplayNameFor(model => model.Cliente.RazonSocial)</strong>
+                    </dt>
+                    <dd class="col-sm-7 ">
+                        @Html.DisplayFor(model => model.Cliente.RazonSocial)
+                    </dd>
+                    <dt class="col-sm-5">
+                        <strong>@Html.DisplayNameFor(model => model.Cliente.Nombre)</strong>
+                    </dt>
+                    <dd class="col-sm-7 ">
+                        @Html.DisplayFor(model => model.Cliente.Nombre) @Html.DisplayFor(model => model.Cliente.Apellido)
+                    </dd>
+                    <dt class="col-sm-5">
+                        <strong>@Html.DisplayNameFor(model => model.Recargo)</strong>
+                    </dt>
+                    <dd class="col-sm-7 ">
+                        @Model.Recargo.ToString("P")
+                    </dd>
+                    <dt class="col-sm-5">
+                        <strong>@Html.DisplayNameFor(model => model.MontoTotal)</strong>
+                    </dt>
+                    <dd class="col-sm-7 ">
+                        @Model.MontoTotal.ToString("C")
+                    </dd>
+                    <dt class="col-sm-5">
+                        <strong>Lineas del Pedido</strong>
+                    </dt>
+                    <dd class="col-sm-4">
+                        @if (Model.LineasPedido != null && Model.LineasPedido.Count > 0)
+                        {
+                            <ul class="list-group">
+                                @foreach (LineaPedidoDto linea in Model.LineasPedido)
+                                {
+                                    <li class="list-group-item d-flex justify-content-between">
+                                        <div>
+                                            @linea.Articulo.Nombre
+                                        </div>
+                                        <span class="badge bg-secondary">@linea.CantidadUnidadesPedidas uni.</span>
+                                    </li>
+                                }
+                            </ul>
+                        }
+                        else
+                        {
+                            <p>No hay líneas de pedido</p>
+                        }
+                    </dd>
+                </dl>
+
+                <form asp-action="Delete">
+                    <input type="hidden" asp-for="Id" />
+                    <button type="submit" class="btn btn-danger">
+                        Anular
+                        <img src="~/img/anular.svg" class="btn-close-white px-1" title="Anular" alt="Anular">
+                    </button>
+                    <br />
+                </form>
+            </div>
+        </div>
+    }
+
+    <a asp-action="Index" class="btn btn-secondary mt-2">
+        Volver a Pedidos
+        <img src="~/img/volver.svg" class="btn-close-white px-1" title="Volver" alt="Volver">
+    </a>
+</div>

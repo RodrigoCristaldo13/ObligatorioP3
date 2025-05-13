@@ -1,0 +1,90 @@
+﻿@model IEnumerable<DepositoPapeleria.Web.Models.ArticuloModel>
+@{
+    ViewData["Title"] = "Articulos";
+}
+
+<div class="container mt-4">
+    <div class="card my-4 border-bottom-0">
+        <div class="card-body">
+            <h4 class="card-title display-6">Buscar Articulos</h4>
+            <h6 class="card-subtitle">Selecciona fecha de inicio y fin para mostrar los articulos que tuvieron movimientos de stock entre esas fechas</h6>
+            <hr />
+            <form method="post" asp-action="Index">
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="fechaDesde">Fecha de Inicio</label>
+                            <input type="date" id="fechaDesde" name="fechaDesde" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="fechaHasta">Fecha de Fin</label>
+                            <input type="date" id="fechaHasta" name="fechaHasta" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="col-md-2 d-flex align-items-end">
+                        <button type="submit" class="btn btn-primary w-100">Buscar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    @if (Model != null && Model.Count() > 0)
+    {
+        <table class="table table-light table-hover text-center">
+            <thead class="thead-dark">
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.First().Id)</th>
+                    <th>@Html.DisplayNameFor(model => model.First().Nombre)</th>
+                    <th>@Html.DisplayNameFor(model => model.First().Descripcion)</th>
+                    <th>Codigo de Producto</th>
+                    <th>@Html.DisplayNameFor(model => model.First().Precio)</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.Id)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Descripcion)</td>
+                        <td>@Html.DisplayFor(modelItem => item.CodProd)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Precio)</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <span class="text-secondary">Página: @ViewBag.Pagina</span>
+    }
+    else
+    {
+        <div class="alert alert-light text-success">No hay articulos para mostrar.</div>
+    }
+    <div class="d-flex justify-content-between">
+        <div>
+            @if (ViewBag.Pagina > 1)
+            {
+                <form method="post" asp-action="Anterior" class="mr-2">
+                    <input type="hidden" name="fechaDesde" value="@ViewBag.fechaDesde" />
+                    <input type="hidden" name="fechaHasta" value="@ViewBag.fechaHasta" />
+                    <input type="submit" class="btn btn-secondary" value="Anterior" />
+                </form>
+            }
+            @if (Model != null && Model.Count() == ViewBag.TopeMax)
+            {
+                <form method="post" asp-action="Siguiente" class="ml-2">
+                    <input type="hidden" name="fechaDesde" value="@ViewBag.fechaDesde" />
+                    <input type="hidden" name="fechaHasta" value="@ViewBag.fechaHasta" />
+                    <input type="submit" class="btn btn-primary" value="Siguiente" />
+                </form>
+            }
+        </div>
+    </div>
+    @if (ViewBag.mensaje != null)
+    {
+        <div class="alert alert-light text-danger mt-3">@ViewBag.mensaje</div>
+    }
+</div>
