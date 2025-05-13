@@ -1,0 +1,66 @@
+﻿@model DepositoPapeleria.Web.Models.MovimientoModel
+
+@{
+    ViewData["Title"] = "Nuevo Movimiento";
+}
+
+<div class="container">
+    <div class="row justify-content-center align-items-center">
+        <div class="card col-md-6">
+            <div class="card-body">
+                <h2 class="card-title text-center display-6">Nuevo Movimiento</h2>
+                <h6 class="card-subtitle text-center mb-4">Selecciona los datos para el movimiento de stock</h6>
+                <hr />
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="form-group">
+                        <label asp-for="IdArticulo" class="control-label">Artículo:</label>
+                        <select asp-for="IdArticulo" class="form-control" required>
+                            <option value="">Seleccione un artículo</option>
+                            @foreach (var item in ViewBag.Articulos)
+                            {
+                                <option value="@item.Id">@item.Nombre</option>
+                            }
+                        </select>
+                        <span asp-validation-for="IdArticulo" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="IdTipoMovimiento" class="control-label">Tipo de Movimiento:</label>
+                        <select asp-for="IdTipoMovimiento" class="form-control" required>
+                            <option value="">Seleccione un tipo</option>
+                            @foreach (var item in ViewBag.TiposMovimiento)
+                            {
+                                <option value="@item.Id">@item.Nombre</option>
+                            }
+                        </select>
+                        <span asp-validation-for="IdTipoMovimiento" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Cantidad" class="control-label">Cantidad:</label>
+                        <input asp-for="Cantidad" class="form-control" placeholder="Ej. 3" required />
+                        <span asp-validation-for="Cantidad" class="text-danger"></span>
+                    </div>
+
+                    @if (ViewBag.mensaje != null)
+                    {
+                        <div class="alert alert-danger mt-4">
+                            @ViewBag.mensaje
+                        </div>
+                    }
+                    @if (ViewBag.mensajeOk != null)
+                    {
+                        <div class="alert alert-success mt-4">
+                            <span class="text-success">@ViewBag.mensajeOk</span>
+                        </div>
+                    }
+                    <div class="form-group text-center mt-5">
+                        <input type="submit" class="btn btn-success" value="Agregar"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

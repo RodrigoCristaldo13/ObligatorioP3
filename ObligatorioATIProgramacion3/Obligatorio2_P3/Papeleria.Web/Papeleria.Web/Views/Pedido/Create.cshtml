@@ -1,0 +1,152 @@
+﻿@using Papeleria.LogicaAplicacion.DataTransferObjects.DTOs
+@model Papeleria.LogicaAplicacion.DataTransferObjects.DTOs.PedidoDto
+@{
+    ViewData["Title"] = "Nuevo Pedido";
+}
+<div class="container p-3">
+    <div class="row justify-content-between align-content-center">
+        <!-- Formulario 1: Agregar Artículos al Carrito -->
+        <div class="card col-lg-5 d-block my-2" id="formArticulo">
+            <div class="card-body">
+                <h4 class="card-title">Añadir Articulo al carrito</h4>
+                <hr />
+                <form asp-action="AddLineaPedido">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group mb-4">
+                        <label for="IdArticulo" class="control-label">Articulo</label>
+                        <select class="form-control" name="idArticulo" for="IdArticulo" required>
+                            <option value="">Seleccione un articulo</option>
+                            @foreach (ArticuloDto articulo in ViewBag.Articulos)
+                            {
+                                <option value="@articulo.Id">@articulo.Nombre (@articulo.Stock Disp.)</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="form-group mb-4">
+                        <label for="Cantidad" class="control-label">Cantidad</label>
+                        <input id="Cantidad" type="number" name="cantidad" class="form-control" placeholder="Ej. 1" required />
+                        @if (ViewBag.Cantidad != null)
+                        {
+                            <p class="text-danger">@ViewBag.Cantidad</p>
+                        }
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">
+                            Agregar
+                            <img src="~/img/agregar.svg" class="btn-close-white px-2" title="Agregar" alt="Agregar">
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Formulario 2: Llenar Datos del Pedido -->
+        <div class="card col-lg-5 d-none my-2" id="formPedido">
+            <div class="card-body">
+                <h4 class="card-title">Datos de entrega del Pedido</h4>
+                <hr />
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group mb-4">
+                        <label asp-for="FechaEntregaPrometida" class="control-label">Fecha de Entrega</label>
+                        <input asp-for="FechaEntregaPrometida" class="form-control" />
+                        <span asp-validation-for="FechaEntregaPrometida" class="text-danger"></span>
+                    </div>
+                    <div class="form-group mb-4">
+                        <label asp-for="IdCliente" class="control-label">Contacto Cliente</label>
+                        <select class="form-control" asp-for="IdCliente">
+                            <option value="">Seleccione un cliente</option>
+                            @foreach (ClienteDto cliente in ViewBag.Clientes)
+                            {
+                                <option value="@cliente.Id">@cliente.Nombre @cliente.Apellido</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success">
+                            Confirmar Pedido
+                            <img src="~/img/completar.svg" class="btn-close-white px-2" title="Confirmar" alt="Confirmar">
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Listar datos del Carrito -->
+        <div class="col-lg-4 my-2">
+            @if (ViewBag.LineasPedido != null && ViewBag.LineasPedido.Count > 0)
+            {
+                <div class="card border-0">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h4 class="card-title m-0">Carrito</h4>
+                        <span class="badge rounded-pill bg-secondary">@ViewBag.LineasPedido.Count</span>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group d-flex">
+                            @foreach (LineaPedidoDto linea in ViewBag.LineasPedido)
+                            {
+                                <li class="list-group-item lh-sm">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <h6 class="my-0">@linea.Articulo.Nombre - @linea.CantidadUnidadesPedidas uni.</h6>
+                                            <small class="my-0 text-secondary">@linea.Articulo.Descripcion</small>
+                                            <br />
+                                            <small class="text-secondary">$ @(linea.PrecioUnitarioVigente * linea.CantidadUnidadesPedidas) + Impuestos </small>
+                                        </div>
+                                        <div class="col-md-6 align-content-center text-end">
+                                            <form asp-action="BorrarLineaPedido" asp-route-idArticulo="@linea.IdArticulo" asp-route-cantidad="@linea.CantidadUnidadesPedidas">
+                                                <button type="submit" class="btn btn-danger">
+                                                    <img src="~/img/eliminar.svg" class="btn-close-white p-2" title="Eliminar" alt="Eliminar">
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                    @if (ViewBag.MensajeCarrito != null)
+                    {
+                        <div class="card-footer text-success">
+                            <span>@ViewBag.MensajeCarrito</span>
+                        </div>
+                    }
+                </div>
+            }
+        </div>
+    </div>
+    <br />
+    @if (ViewBag.msgError != null)
+    {
+        <div class="alert alert-danger mx-5">
+            <span> @ViewBag.msgError </span>
+        </div>
+    }
+    <br />
+    <!-- Controlamos que se pueda mostrar el formulario de pedido cuando exista al menos una lineaPedido -->
+    @if (ViewBag.LineasPedido != null && ViewBag.LineasPedido.Count > 0)
+    {
+        <div class="">
+            <!-- Botón para mostrar/ocultar formularios usando JavaScript -->
+            <button type="button" class="btn btn-primary" id="btnContinuar" onclick="toggleForm()">
+                Continuar
+                <img src="~/img/siguiente.svg" class="btn-close-white px-2" title="Volver" alt="Volver">
+            </button>
+        </div>
+    }
+    <div class="mt-4">
+        <a asp-action="Index" class="btn btn-secondary">
+            Volver
+            <img src="~/img/volver.svg" class="btn-close-white px-2" title="Volver" alt="Volver">
+        </a>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+

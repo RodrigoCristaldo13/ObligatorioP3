@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="CasosDeUso\LineasPedidos\**" />
+    <Compile Remove="InterfacesCU\LineasPedidos\**" />
+    <EmbeddedResource Remove="CasosDeUso\LineasPedidos\**" />
+    <EmbeddedResource Remove="InterfacesCU\LineasPedidos\**" />
+    <None Remove="CasosDeUso\LineasPedidos\**" />
+    <None Remove="InterfacesCU\LineasPedidos\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="CasosDeUso\Pedidos\ObtenerLineasPedidoPorPedidoIdCU.cs" />
+    <Compile Remove="InterfacesCU\Pedidos\IObtenerLineasPedidoPorPedidoId.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Papeleria.LogicaNegocio\Papeleria.LogicaNegocio.csproj" />
+  </ItemGroup>
+
+</Project>
